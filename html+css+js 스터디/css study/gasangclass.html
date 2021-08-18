@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상 클래스</title>
+  <style>
+    .navi ul {
+      list-style: none;
+    }
+    .navi li {
+      display: inline-block;
+    }
+    /* 가상 클래스 */
+    /* link->visited->hover->active 순으로 작성 */
+    .navi ul li a:link, a:visited {
+      display: block;
+      font-size: 14px;
+      color: #000;
+      padding: 10px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .navi a:hover, navi a:focus {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .navi a:active {
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navi">
+      <ul>
+        <li><a href="#">이용 안내</a></li>
+        <li><a href="#">객실 소개</a></li>
+        <li><a href="#">예약 방법 및 요금</a></li>
+        <li><a href="#">예약하기</a></li>
+      </ul>
+    </nav>
+  </div>
+</body>
+</html>
