@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습문제 2</title>
+	<style>
+		form {
+      margin-bottom:30px;
+    }
+    input[type="text"] {
+      width:30px;
+      height:20px;
+      text-align: center;
+    }
+    button {
+      margin-left:10px;
+    }
+    table {
+      width:300px;      
+    }
+    table, td {
+      border:1px solid #ccc;
+      border-collapse: collapse;
+    }
+    td {
+      padding:10px;
+    }
+	</style>
+</head>
+<body>
+	<form>
+		<input type="text" id="row" value="1">행
+		<input type="text" id="column" value="1">열
+		<button onclick="createtable(); return false;">작성</button>
+	</form>
+	<div id="contents"></div>
+	<script>
+		function createtable(){
+			var rowCount = document.querySelector("#row").value;
+			var colCount = document.querySelector("#column").value;
+		
+			var newTable = document.createElement("table");
+
+			for(i = 0; i < rowCount; i++) {
+				var newRow = document.createElement("tr");
+				for(k = 0; k < colCount; k++) {
+					var newCell = document.createElement("td");
+					var text = document.createTextNode(i+", "+k);
+					newCell.appendChild(text);
+					newRow.appendChild(newCell);
+				}
+				newTable.appendChild(newRow);
+			}
+
+			var contents = document.querySelector("#contents");
+			contents.appendChild(newTable);
+			}
+	</script>
+</body>
+</html>
